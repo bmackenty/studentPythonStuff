@@ -1,2 +1,2 @@
-# stduentPythonStuff
+# studentPythonStuff
 For student python stuff
