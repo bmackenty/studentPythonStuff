@@ -1,6 +1,6 @@
-# This program makes a list of random names, ID numbers and reasonably linked email addresses
-# The purpose of this file is to create dummy data which can be used to run benchmark testing.
-# This code is a horribly and quickly implemented hack.
+# This program makes a list of random names, ID numbers and email's which resemble the actual username
+# The purpose of this file is to create dummy data which can be used to run benchmark testing on databases 
+# This code is a horribly and quickly implemented hack to solve a problem for a student.
 #
 # the names were taken from here: https://stackoverflow.com/questions/1803628/raw-list-of-person-names
 # The technique I used to replace odd characters is so, so, so very ugly and silly
