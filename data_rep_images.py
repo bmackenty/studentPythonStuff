@@ -8,7 +8,7 @@ numpy.set_printoptions(threshold=numpy.inf)
 
 # we open the file here. beware of path problems, make sure the image is in the same folder that your python program is in
 # we assign the variable im the image value
-im = Image.open("smile.png")
+im = Image.open("image1.png")
 
 # we print out some information about this image:
 print('image format is: ', im.format)
