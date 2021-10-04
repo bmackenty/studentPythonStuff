@@ -9,8 +9,6 @@ numpy.set_printoptions(threshold=numpy.inf)
 # we open the file here. beware of path problems, make sure the image is in the same folder that your python program is in
 # we assign the variable im the image value
 im = Image.open("image1.png")
-
-# we are going to convert the image to grayscale. This dramatically simplifies the work of identifying images.
 im = im.convert('L')
 
 # we print out some information about this image:
@@ -29,7 +27,7 @@ print(len(image_as_array[50]))
 print(image_as_array[50])
 
 # now we are going to change ONE pixel. It should be in the upper-left corner of our circle. 
-# image_as_array[50][100] = [0, 0, 0, 0]
+image_as_array[50][100] = 255
 
 # Now we are going to turn our array back into an image:
 altered_image = Image.fromarray(image_as_array)
