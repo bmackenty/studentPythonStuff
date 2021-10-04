@@ -10,6 +10,9 @@ numpy.set_printoptions(threshold=numpy.inf)
 # we assign the variable im the image value
 im = Image.open("image1.png")
 
+# we are going to convert the image to grayscale. This dramatically simplifies the work of identifying images.
+im = im.convert('L')
+
 # we print out some information about this image:
 print('image format is: ', im.format)
 print('image size is: ', im.size)
