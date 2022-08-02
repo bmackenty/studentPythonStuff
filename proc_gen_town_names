@@ -1,11 +1,18 @@
+# this procedural generator makes towns and villages
 # it is a simple procedural generator that makes a town and a village name
 
 import random
+import os
 
-directions = ["North", "South", "East", "West", "New"]
+directions = ["North", "South", "East", "West", "New", "Old"]
 prefix = ["Edgar", "Hart", "Vine","Tis", "Eng", "Lon", "War"]
 suffix = ["yard", "town", "ville", "ton", "land", "burg", "falls", "shire", "don"]
 
 for i in range(10):
-    village_name = random.choice(directions) + " " + random.choice(prefix) + random.choice(suffix)
+    if random.randint(0,10) > 5:
+        village_name = random.choice(directions) + " " + random.choice(prefix) + random.choice(suffix)
+    else:
+        village_name = random.choice(prefix) + random.choice(suffix)
+
+
     print(village_name)
