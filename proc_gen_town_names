@@ -2,11 +2,10 @@
 # it is a simple procedural generator that makes a town and a village name
 
 import random
-import os
 
 directions = ["North", "South", "East", "West", "New", "Old"]
-prefix = ["Edgar", "Hart", "Vine","Tis", "Eng", "Lon", "War"]
-suffix = ["yard", "town", "ville", "ton", "land", "burg", "falls", "shire", "don"]
+prefix = ["Krac", "Edgar", "Hart", "Vine","Tis", "Eng", "Lon", "War"]
+suffix = ["yard", "town", "ville", "ton", "land", "burg", "falls", "shire", "don", "ow"]
 
 for i in range(10):
     if random.randint(0,10) > 5:
