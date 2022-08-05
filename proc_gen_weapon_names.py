@@ -75,7 +75,7 @@ final_weapon_material = final_weapon_material[:last_comma] + " and" + final_weap
 
 weapon_story_1 = "Long ago, during the era of the " + selected_weapon_age + ", " + selected_weapon_culture 
 weapon_story_2 = "smiths forged " + weapon_name(selected_weapon_culture) + "'s " + selected_weapon_prefix
-weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in a helix-shaped combination of" + final_weapon_material + "It is clear great craftmanship went into the creation."
+weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in a helix-shaped combination of" + final_weapon_material + ", it is clear great craftmanship went into the creation."
 print(selected_weapon_sentience)
 if selected_weapon_sentience == "sentient":
     weapon_story_4 = "This weapon is sentient. Moving your hand near it, you can feel a vague sense of " + selected_weapon_alignment + " " + selected_weapon_personality + "."
