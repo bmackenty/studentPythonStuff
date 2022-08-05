@@ -56,7 +56,7 @@ weapon_material = ["hard wood", "dark wood", "exotic wood", "rare stone", "semi-
 weapon_alignment = ["lawful", "neutral", "chaotic", "unaligned", "evil"]
 selected_weapon_alignment = random.choice(weapon_alignment)
 
-weapon_personality = ["optimisitic", "pessimistic", "jealous", "bloodthirsty", "uncertain", "self-conscious"]
+weapon_personality = ["optimisiticness", "pessimisticness", "jealously", "bloodthirstness", "uncertainty", "self-consciousness"]
 selected_weapon_personality = random.choice(weapon_personality)
 
 weapon_sentience = ["sentient", "unsentient"]
@@ -75,7 +75,13 @@ final_weapon_material = final_weapon_material[:last_comma] + " and" + final_weap
 
 weapon_story_1 = "Long ago, during the era of the " + selected_weapon_age + ", " + selected_weapon_culture 
 weapon_story_2 = "smiths forged " + weapon_name(selected_weapon_culture) + "'s " + selected_weapon_prefix
-weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in a helix-shaped combination of " + final_weapon_material 
+weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in a helix-shaped combination of" + final_weapon_material + "It is clear great craftmanship went into the creation."
+print(selected_weapon_sentience)
+if selected_weapon_sentience == "sentient":
+    weapon_story_4 = "This weapon is sentient. Moving your hand near it, you can feel a vague sense of " + selected_weapon_alignment + " " + selected_weapon_personality + "."
+else:
+    weapon_story_4 = "You detect no magic, sentient or otherwise, within this weapon."
 
-print(weapon_story_1, weapon_story_2, weapon_story_3)
+
+print(weapon_story_1, weapon_story_2, weapon_story_3, weapon_story_4)   
 
