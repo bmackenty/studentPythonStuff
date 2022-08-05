@@ -17,18 +17,32 @@ selected_weapon_ranged= random.choice(weapon_types_ranged)
 weapon_types_thrown = ["javelin", "throwing axe", "throwing hammer", "throwing knife", "throwing spear", "dart", "sling"]
 selected_weapon_thrown = random.choice(weapon_types_thrown)
 
+weapon_types_light_melee = ["short sword", "dagger", "staff","rapier", "scimitar", "sickle", "whip"]
+selected_weapon_light_melee = random.choice(weapon_types_light_melee)
 
-weapon_types_melee = ["long sword", "short sword", "dagger", "staff", "mace", "morning star","rapier", "great axe", "two-handed sword", "war hammer"]
-selected_weapon_melee = random.choice(weapon_types_melee)
+weapon_types_heavy_melee = ["great sword", "mace", "morning star", "great axe", "two-handed sword", "war hammer","mighty-club-of-clubbing"]
+selected_weapon_heavy_melee = random.choice(weapon_types_heavy_melee)
 
+weapon_types_magic = ["wand","orb","amulet"]
+selected_weapon_magic = random.choice(weapon_types_magic)
 
 weapon_prefix = ["sharp", "broken", "exquisite", "normal", "sentient", "flaming", "frosty", "furious", "glowing", "hot", "icy", "lightning", "magic", "mighty", "mystic", "poisoned", "sharp", "silent", "slimy", "sneaky", "sparkling", "thundering", "twilight", "vicious", "wicked", "opinionated", "wrenching", "zealous"]
-weapon_previous_owner = ["Friar's", "Votran's", "Anna's", "Gorg's", "Ar'rian's", "Thag's", "Quein's", "Worble's"]
+selected_weapon_prefix = random.choice(weapon_prefix)
+
+# weapon_previous_owner = ["Friar's", "Votran's", "Anna's", "Gorg's", "Ar'rian's", "Thag's", "Quein's", "Worble's"]
 
 weapon_material = ["wood", "stone", "rare metals", "incadescent stone", "silver", "dark matter", "metorite"]
+
 weapon_alignment = ["lawful", "neutral", "chaotic", "unaligned", "evil"]
+selected_weapon_alignment = random.choice(weapon_alignment)
+
+weapon_personality = ["optimisitic", "pessimistic", "jealous", "bloodthirsty", "uncertain", ""]
+
 weapon_sentience = ["sentient", "unsentient"]
+selected_weapon_sentience = random.choice(weapon_sentience)
+
 weapon_size = ["tiny", "small", "medium", "large", "huge"]
+selected_weapon_size = random.choice(weapon_size)
 
 
 
