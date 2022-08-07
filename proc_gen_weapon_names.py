@@ -53,6 +53,9 @@ def weapon_name(culture):
 
 weapon_material = ["hard wood", "dark wood", "exotic wood", "rare stone", "semi-precious gems", "rare metals", " obsidian", "incadescent stone", "silver", "dark matter", "metorite"]
 
+weapon_construction_pattern = ["a helix-shaped", "an interlocking", "a spiral-shaped"]
+selected_weapon_construction_pattern = random.choice(weapon_construction_pattern)
+
 weapon_alignment = ["lawful", "neutral", "chaotic", "unaligned", "evil"]
 selected_weapon_alignment = random.choice(weapon_alignment)
 
@@ -73,9 +76,9 @@ final_weapon_material = final_weapon_material.lstrip(",")
 last_comma = final_weapon_material.rfind(",")
 final_weapon_material = final_weapon_material[:last_comma] + " and" + final_weapon_material[(last_comma+1):]
 
-weapon_story_1 = "Long ago, during the era of the " + selected_weapon_age + ", " + selected_weapon_culture 
+weapon_story_1 = "Long ago, during the age of " + selected_weapon_age + ", " + selected_weapon_culture 
 weapon_story_2 = "smiths forged " + weapon_name(selected_weapon_culture) + "'s " + selected_weapon_prefix
-weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in a helix-shaped combination of" + final_weapon_material + ", it is clear great craftmanship went into the creation."
+weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and experienced craftmanship went into the creation."
 print(selected_weapon_sentience)
 if selected_weapon_sentience == "sentient":
     weapon_story_4 = "This weapon is sentient. Moving your hand near it, you can feel a vague sense of " + selected_weapon_alignment + " " + selected_weapon_personality + "."
