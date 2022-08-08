@@ -7,7 +7,7 @@ selected_weapon_culture = random.choice(weapon_culture)
 weapon_age = ["Peace", "War", "Tranquility", "Sundering", "Rage", "Destruction", "Terror", "Doom", "Despair", "Glory", "Victory", "Darkeness", "Light", "Discovery"]
 selected_weapon_age = random.choice(weapon_age)
 
-weapon_category = ["ranged", "melee", "magic", "thrown", "other"]
+weapon_category = ["ranged", "light_melee", "heavy_melee", "magic", "thrown"]
 selected_weapon_category = random.choice(weapon_category)
 
 weapon_types_ranged = ["short bow", "long bow", "crossbow"]
@@ -25,7 +25,7 @@ selected_weapon_heavy_melee = random.choice(weapon_types_heavy_melee)
 weapon_types_magic = ["wand","orb","amulet"]
 selected_weapon_magic = random.choice(weapon_types_magic)
 
-weapon_prefix = ["sharp", "broken", "exquisite", "normal", "sentient", "flaming", "frosty", "furious", "glowing", "hot", "icy", "lightning", "magic", "mighty", "mystic", "poisoned", "sharp", "silent", "slimy", "sneaky", "sparkling", "thundering", "twilight", "vicious", "wicked", "opinionated", "wrenching", "zealous"]
+weapon_prefix = ["sharp", "broken", "exquisite", "normal", "flaming", "frosty", "furious", "glowing", "hot", "icy", "lightning", "magic", "mighty", "mystic", "poisoned", "sharp", "silent", "slimy", "sneaky", "sparkling", "thundering", "twilight", "vicious", "wicked", "opinionated", "wrenching", "zealous"]
 selected_weapon_prefix = random.choice(weapon_prefix)
 
 def weapon_name(culture):
@@ -37,7 +37,7 @@ def weapon_name(culture):
         elvish_names = ["Iyrandrar Sarmaer","Haryk Olayarus","Elaith Theran","Felaern Enna","Alluin Olofiel","Hagduin Nerirora","Otaehryn Keathyra","Ryo Pawenys","Phaendar Keabalar","Iolas Iarkrana"]
         return random.choice(elvish_names)
     elif culture == "Human":
-        human_names = ["Boron","Celestine","Dagmara","Eleanor","Fiona","Gillian","Hannah","Irene","Jasmine","Katherine","Lillian","Maggie","Natalie","Olivia","Pamela","Quinn","Rachel","Samantha","Tanya","Una","Vivian","Wendy","Xaviera","Yvonne","Zoe"]
+        human_names = ["Adrian", "Amber", "Tyler", "Devon", "Boron","Celestine","Dagmara","Eleanor","Fiona","Gillian","Hannah","Irene","Jasmine","Katherine","Lillian","Maggie","Natalie","Olivia","Pamela","Quinn","Rachel","Samantha","Tanya","Una","Vivian","Wendy","Xaviera","Yvonne","Zoe"]
         return random.choice(human_names)
     elif culture == "Infernal":
         infernal_names = ["Boron","Celestine","Eleanor","Fiona","Gillian","Hannah","Irene","Jasmine","Katherine","Lillian","Maggie","Natalie","Olivia","Pamela","Quinn","Rachel","Samantha","Tanya","Una","Vivian","Wendy","Xaviera","Yvonne","Zoe"]
@@ -59,7 +59,7 @@ selected_weapon_construction_pattern = random.choice(weapon_construction_pattern
 weapon_alignment = ["lawful", "neutral", "chaotic", "unaligned", "evil"]
 selected_weapon_alignment = random.choice(weapon_alignment)
 
-weapon_personality = ["optimisiticness", "pessimisticness", "jealously", "bloodthirstness", "uncertainty", "self-consciousness"]
+weapon_personality = ["optimisiticness", "pessimisticness", "jealously", "bloodthirstyness", "uncertainty", "self-consciousness"]
 selected_weapon_personality = random.choice(weapon_personality)
 
 weapon_sentience = ["sentient", "unsentient"]
@@ -78,12 +78,26 @@ final_weapon_material = final_weapon_material[:last_comma] + " and" + final_weap
 
 weapon_story_1 = "Long ago, during the age of " + selected_weapon_age + ", " + selected_weapon_culture 
 weapon_story_2 = "smiths forged " + weapon_name(selected_weapon_culture) + "'s " + selected_weapon_prefix
-weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and experienced craftmanship went into the creation."
+if selected_weapon_category == "Ranged":
+    weapon_story_3 = selected_weapon_ranged + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+elif selected_weapon_category == "light_melee":
+    weapon_story_3 = selected_weapon_light_melee + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+elif selected_weapon_category == "heavy_melee":
+    weapon_story_3 = selected_weapon_heavy_melee + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+elif selected_weapon_category == "magic":
+    weapon_story_3 = selected_weapon_magic + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+elif selected_weapon_category == "thrown":
+    weapon_story_3 = selected_weapon_thrown + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+elif selected_weapon_category == "ranged":
+    weapon_story_3 = selected_weapon_ranged + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+
 print(selected_weapon_sentience)
 if selected_weapon_sentience == "sentient":
     weapon_story_4 = "This weapon is sentient. Moving your hand near it, you can feel a vague sense of " + selected_weapon_alignment + " " + selected_weapon_personality + "."
 else:
     weapon_story_4 = "You detect no magic, sentient or otherwise, within this weapon."
+
+
 
 
 print(weapon_story_1, weapon_story_2, weapon_story_3, weapon_story_4)   
