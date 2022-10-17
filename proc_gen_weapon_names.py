@@ -27,11 +27,11 @@ selected_weapon_heavy_melee = random.choice(weapon_types_heavy_melee)
 weapon_types_magic = ["wand","staff"]
 selected_weapon_magic = random.choice(weapon_types_magic)
 
-weapon_prefix = ["sharp", "broken", "exquisite", "normal", "flaming", "frosty", "furious", "glowing", "hot", "icy", "lightning", "magic", "mighty", "mystic", "poisoned", "sharp", "silent", "slimy", "sneaky", "sparkling", "thundering", "twilight", "vicious", "wicked", "opinionated", "wrenching", "zealous"]
+weapon_prefix = ["sharp", "broken", "exquisite", "normal", "flaming", "frosty", "furious", "glowing", "hot", "icy"]
 selected_weapon_prefix = random.choice(weapon_prefix)
 
 if selected_weapon_prefix == "sharp":
-    weapon_crunch = "This weapon does " + random.randint(1,4) + "d6 damage."
+    weapon_crunch = "This weapon does " , random.randint(1,4) , "d6 damage."
 elif selected_weapon_prefix == "broken":
     weapon_crunch = "Without extraordinary (and most likely skillful) repair from a " + selected_weapon_culture + "blacksmith, this weapon will crumble into little tiny pieces."
 elif selected_weapon_prefix == "exquisite":
@@ -39,8 +39,25 @@ elif selected_weapon_prefix == "exquisite":
 elif selected_weapon_prefix == "normal":
     weapon_crunch = "This weapon is normal, but very beautiful. It does normal damage."
 elif selected_weapon_prefix == "flaming":
-    weapon_crunch = "This weapon is aflame, and does " + random.randint(1,4) + "d6 fire damage."
-# BILL start working here. 
+    weapon_crunch = "This weapon is aflame, and does " , random.randint(1,4) , "d6 fire damage."
+elif selected_weapon_prefix == "frosty":
+    weapon_crunch = "This weapon is remarkably cold to the touch, and does " , random.randint(1,4) , "d6 cold damage."
+elif selected_weapon_prefix == "furious":
+    weapon_crunch = "This weapon is always in a bad mood, complaining and pessimistic. It does normal damage."
+elif selected_weapon_prefix == "glowing":
+    weapon_crunch = "This weapon is glowing. It emits soft magical light in a 10 foot cube."
+elif selected_weapon_prefix == "hot":
+    weapon_crunch = "This weapon is remarkably warm to the touch. The wielder of this weapon has damage resistance to cold damge."
+elif selected_weapon_prefix == "frosty":
+    weapon_crunch = "This weapon is remarkably cold to the touch, and does " , random.randint(1,4) , "d6 cold damage."
+elif selected_weapon_prefix == "icy":
+    weapon_crunch = "This weapon is remarkably cold to the touch, and does " , random.randint(1,4) , "d6 cold damage."
+elif selected_weapon_prefix == "frosty":
+    weapon_crunch = "This weapon is remarkably cold to the touch, and does ", random.randint(1,4) , "d6 cold damage."
+
+
+
+
 
 
 def weapon_name(culture):
@@ -129,4 +146,3 @@ else:
 weapon_story_5 = selected_past_event_1
 
 print(weapon_story_1, weapon_story_2, weapon_story_3, weapon_story_4, weapon_story_5)   
-
