@@ -129,10 +129,9 @@ elif selected_weapon_category == "thrown":
     weapon_story_3 = selected_weapon_thrown + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation. " + weapon_crunch
 
 
-if selected_weapon_sentience == "sentient":
-    weapon_story_4 = "This weapon is sentient. Moving your hand near it, you can feel a vague sense of " + selected_weapon_alignment + " " + selected_weapon_personality + "."
-else:
-    weapon_story_4 = "You detect no magic, sentient or otherwise, within this weapon."
+
+weapon_story_4 = "This weapon is sentient. Moving your hand near it, you can feel a vague sense of " + selected_weapon_alignment + " " + selected_weapon_personality + "."
+
 
 weapon_story_5 = selected_past_event_1
 
