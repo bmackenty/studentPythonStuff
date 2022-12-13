@@ -27,20 +27,28 @@ selected_weapon_heavy_melee = random.choice(weapon_types_heavy_melee)
 weapon_types_magic = ["wand","staff"]
 selected_weapon_magic = random.choice(weapon_types_magic)
 
-weapon_prefix = ["sharp", "broken", "exquisite", "normal", "flaming", "frosty", "furious", "glowing", "hot", "icy", "lightning", "magic", "mighty", "mystic", "poisoned", "sharp", "silent", "slimy", "sneaky", "sparkling", "thundering", "twilight", "vicious", "wicked", "opinionated", "wrenching", "zealous"]
+weapon_prefix = ["sharp", "broken", "exquisite", "normal", "flaming", "frosty", "furious", "glowing"]
 selected_weapon_prefix = random.choice(weapon_prefix)
 
 if selected_weapon_prefix == "sharp":
-    weapon_crunch = "This weapon does " + random.randint(1,4) + "d6 damage."
+    weapon_crunch = "This weapon does " + str(random.randint(1,4)) + "d6 damage."
 elif selected_weapon_prefix == "broken":
-    weapon_crunch = "Without extraordinary (and most likely skillful) repair from a " + selected_weapon_culture + "blacksmith, this weapon will crumble into little tiny pieces."
+    weapon_crunch = "Without extraordinary (and most likely skillful) repair from a " + selected_weapon_culture + " blacksmith, this weapon will crumble into little tiny pieces."
 elif selected_weapon_prefix == "exquisite":
     weapon_crunch = "This weapon is a masterpiece of craftsmanship, and is a veritable work of art. You have +2 on any rolls to pick up romantic partners while holding this weapon."
 elif selected_weapon_prefix == "normal":
     weapon_crunch = "This weapon is normal, but very beautiful. It does normal damage."
 elif selected_weapon_prefix == "flaming":
-    weapon_crunch = "This weapon is aflame, and does " + random.randint(1,4) + "d6 fire damage."
-# BILL start working here. 
+    weapon_crunch = "This weapon is aflame, and does " + str(random.randint(1,4)) + "d6 fire damage."
+elif selected_weapon_prefix == "frosty":
+    weapon_crunch = "This weapon radiates cold, and does " + str(random.randint(1,4)) + "d6 frost damage."
+elif selected_weapon_prefix == "furious":
+    weapon_crunch = "Once this weapon hits an enemy, that enemy will relentlessly attack whomever wields the weapon."
+elif selected_weapon_prefix == "glowing":
+    weapon_crunch = "This weapon is glowing, It will glow when there is no danger or risk to the owner. When there is even the slightest hint of danger, it will stop glowing."
+elif selected_weapon_prefix == "flaming":
+    weapon_crunch = "This weapon is aflame, and does " + str(random.randint(1,4)) + "d6 fire damage."
+# BILL start working here
 
 
 def weapon_name(culture):
@@ -94,12 +102,12 @@ final_weapon_material = final_weapon_material[:last_comma] + " and" + final_weap
 
 weapon_past_event_1 = {
     1: "At one point in this weapon's history it was in a young dragon's horde. It is unknown if the dragon continues to look for it.", 
-    2: "For 30 years, this weapon was used as a table ornament in the home of Prince Fumbledick, who was unaware of it's importance.", 
-    3: "This weapon was once stolen by a goblin. When the litch who owned the weapon found the goblin, he punished the golbin severely. This is why goblin soup is now a popular dish amongst evil wizards and litches.",
+    2: "For 30 years, this weapon was used as a table ornament in the modest home of Prince Fumbledick, who was unaware of it's importance.", 
+    3: "This weapon was once stolen by a goblin. When the litch who owned the weapon found the goblin, he punished the golbin severely, which is why goblin soup is now a popular dish amongst evil wizards and litches.",
     4: "This weapon was once wielded by a young Kawian apprentice, who later became a fearsome warrior.",
     5: "For 1000 years, this weapon was displayed in an Elvish museum of ancient antiquities.",
     6: "When this weapon was created, the blacksmith had great regret for the pain it would cause. She asked the Gods for forgiveness. They declined to forgive her, so she swore never to craft another weapon again.",
-    7: "This weapon was used by Gnarl Tooth Fang in a famous battle of a Great War. It was used by the Gnarl Tooth Fang to fight a dragon that attacked the city."
+    7: "This weapon was used by Gnarl Tooth Fang in the battle of lost hope during the 8th Great War."
 }
 
 selected_past_event_1 = random.choice(list(weapon_past_event_1.values()))
@@ -110,15 +118,15 @@ selected_past_event_1 = random.choice(list(weapon_past_event_1.values()))
 weapon_story_1 = "Long ago, during the age of " + selected_weapon_age + ", " + selected_weapon_culture 
 weapon_story_2 = "smiths forged " + weapon_name(selected_weapon_culture) + "'s " + selected_weapon_prefix
 if selected_weapon_category == "ranged":
-    weapon_story_3 = selected_weapon_ranged + ". TThe bow is constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+    weapon_story_3 = selected_weapon_ranged + ". The wood on this weapon is constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation. " + weapon_crunch
 elif selected_weapon_category == "light_melee":
-    weapon_story_3 = selected_weapon_light_melee + ". Elegantly crafted in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+    weapon_story_3 = selected_weapon_light_melee + ". Elegantly crafted in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation. " + weapon_crunch
 elif selected_weapon_category == "heavy_melee":
-    weapon_story_3 = selected_weapon_heavy_melee + ". he handle is constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+    weapon_story_3 = selected_weapon_heavy_melee + ". he handle is constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation. " + weapon_crunch
 elif selected_weapon_category == "magic":
-    weapon_story_3 = selected_weapon_magic + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+    weapon_story_3 = selected_weapon_magic + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation. " + weapon_crunch
 elif selected_weapon_category == "thrown":
-    weapon_story_3 = selected_weapon_thrown + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation."
+    weapon_story_3 = selected_weapon_thrown + ". Constructed in " + selected_weapon_construction_pattern + " combination of" + final_weapon_material + ", it is clear careful and extraordinary craftmanship went into the creation. " + weapon_crunch
 
 
 if selected_weapon_sentience == "sentient":
