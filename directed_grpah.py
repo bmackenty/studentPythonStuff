@@ -1,5 +1,5 @@
 # This code was NOT WRITTEN BY ME. It was written by ChatAI. 
-# this code creates a weighted directed graph with X nodes and random weights between 1 and 10
+# this code creates a weighted directed graph with 10 nodes and random weights between 1 and 10
 import random
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -25,6 +25,13 @@ for i in range(num_nodes):
         if i != j:
             weight = random.randint(1, 10)
             g.add_edge(i, j, weight)
+
+# Print the adjacency matrix
+print("Adjacency matrix:")
+for i in range(num_nodes):
+    for j in range(num_nodes):
+        print(f"{g.adj_matrix[i][j]:>3}", end=" ")
+    print()
 
 # Create a NetworkX graph
 nx_graph = nx.DiGraph()
