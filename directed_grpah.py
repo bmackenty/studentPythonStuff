@@ -1,5 +1,5 @@
 # This code was NOT WRITTEN BY ME. It was written by ChatAI. 
-# this code creates a weighted directed graph with 10 nodes and random weights between 1 and 10
+# this code creates a weighted directed graph with X nodes and random weights between 1 and 10
 import random
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -12,13 +12,16 @@ class Graph:
     def add_edge(self, src, dest, weight):
         self.adj_matrix[src][dest] = weight
 
-# Create the graph with 100 nodes
-g = Graph(10)
+# Get the number of nodes from the user
+num_nodes = int(input("Enter the number of nodes: "))
+
+# Create the graph with the specified number of nodes
+g = Graph(num_nodes)
 
 # Add edges to the graph with random weights between 1 and 10
-for i in range(10):
+for i in range(num_nodes):
     num_edges = random.randint(1, 10)
-    for j in random.sample(range(10), num_edges):
+    for j in random.sample(range(num_nodes), num_edges):
         if i != j:
             weight = random.randint(1, 10)
             g.add_edge(i, j, weight)
@@ -27,12 +30,12 @@ for i in range(10):
 nx_graph = nx.DiGraph()
 
 # Add nodes to the graph
-for i in range(10):
+for i in range(num_nodes):
     nx_graph.add_node(i)
 
 # Add edges to the graph
-for i in range(10):
-    for j in range(10):
+for i in range(num_nodes):
+    for j in range(num_nodes):
         if g.adj_matrix[i][j] > 0:
             nx_graph.add_edge(i, j, weight=g.adj_matrix[i][j])
 
