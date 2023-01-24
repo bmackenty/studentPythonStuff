@@ -1,3 +1,5 @@
+# chatGPT generated! 
+from termcolor import colored
 import random
 import os
 import sys
@@ -38,7 +40,12 @@ while True:
     os.system('clear')  # Clear the screen
     for y in range(height):
         for x in range(width):
-            print(dungeon[y][x], end="")
+            if dungeon[y][x] == wall:
+                print(colored(dungeon[y][x], 'grey'), end="")
+            elif dungeon[y][x] == player:
+                print(colored(dungeon[y][x], 'green'), end="")
+            else:
+                print(colored(dungeon[y][x], 'white'), end="")
         print()
 
     # Get user input
