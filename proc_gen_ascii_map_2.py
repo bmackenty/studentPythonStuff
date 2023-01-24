@@ -1,8 +1,14 @@
-# chatGPT generated! 
+# from chatGPT
 from termcolor import colored
+from prettytable import PrettyTable
 import random
 import os
 import sys
+
+player_hp = 10
+player_attack = 5
+player_defense = 5
+
 
 # ASCII characters for the different dungeon elements
 wall = "#"
@@ -72,5 +78,15 @@ while True:
             dungeon[player_y][player_x] = floor
             player_x += 1
             dungeon[player_y][player_x] = player
+    
+# Show the character sheet
+    elif key == 'c':
+        table = PrettyTable()
+        table.field_names = ["Stat", "Value"]
+        table.add_row(["HP", colored(str(player_hp), 'red')])
+        table.add_row(["Attack", colored(str(player_attack), 'green')])
+        table.add_row(["Defense", colored(str(player_defense), 'yellow')])
+        print(table)
+        input("Press enter to continue...")
     elif key == 'q':
         break
