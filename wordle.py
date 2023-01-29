@@ -1,3 +1,4 @@
+# this file was written by a student for a project
 import os
 import wordle_list
 import random
