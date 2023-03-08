@@ -1,4 +1,3 @@
-# this code was written by chatGPT
 import random
 
 # Define the ranks, suits, and values of cards
@@ -16,6 +15,9 @@ for rank in ranks:
 # Shuffle the deck
 random.shuffle(deck)
 
-# Print the shuffled deck
-for card in deck:
-    print(card)
+# Ask the user how many cards they want to deal
+num_cards = int(input("How many cards do you want to deal? "))
+
+# Deal the specified number of cards
+for i in range(num_cards):
+    print(deck[i])
