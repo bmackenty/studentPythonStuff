@@ -102,7 +102,7 @@ final_weapon_material = final_weapon_material[:last_comma] + " and" + final_weap
 
 weapon_past_event_1 = {
     1: "At one point in this weapon's history it was in a young dragon's horde. It is unknown if the dragon continues to look for it.", 
-    2: "For 30 years, this weapon was used as a table ornament in the modest home of Prince Fumbledick, who was unaware of it's importance.", 
+    2: "For 30 years, this weapon was used as a table ornament in the modest home of Prince Fumbleflunk, who was unaware of it's importance.", 
     3: "This weapon was once stolen by a goblin. When the litch who owned the weapon found the goblin, he punished the golbin severely, which is why goblin soup is now a popular dish amongst evil wizards and litches.",
     4: "This weapon was once wielded by a young Kawian apprentice, who later became a fearsome warrior.",
     5: "For 1000 years, this weapon was displayed in an Elvish museum of ancient antiquities.",
