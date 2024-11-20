@@ -1,6 +1,6 @@
 import os
 import random
-
+from ports import port_names
 os.system("clear")
 
 # Today, our fleet of around 740 ships call 343 ports and terminals in 121 
@@ -50,13 +50,13 @@ def calculate_distance(port1, port2):
     distance = ((x2 - x1)**2 + (y2 - y1)**2)**0.5
     return distance
 
-NYC1 = port('New York', 40.7128, 74.0060)
-NYC2 = port('New York', 40.7128, 75.0060)
-BOSS = port('Boston', 42.3601, 71.0589)
-MARY = port('Baltimore', 39.2904, 76.6122)
 
-ship1 = ship('Maersk', 'At sea')
-ship2 = ship('Maersk', 'At sea')
-ship3 = ship('Maersk', 'At sea')
 
-print(calculate_distance(NYC1, MARY))
+# this creates a list of port objects
+ports = [] 
+for i in port_names:
+    port1 = port(i[1], float(i[2]), float(i[3]))
+    ports.append(port1)
+
+print(f'{len(ports)} ports created')
+print(ports[0].port, ports[0].origin_x, ports[0].origin_y)
