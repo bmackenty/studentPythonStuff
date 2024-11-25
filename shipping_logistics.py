@@ -1,6 +1,7 @@
 import os
 import random
 from ports import port_names
+from ships import ship_names
 os.system("clear")
 
 # Today, our fleet of around 740 ships call 343 ports and terminals in 121 
@@ -58,5 +59,15 @@ for i in port_names:
     port1 = port(i[1], float(i[2]), float(i[3]))
     ports.append(port1)
 
+# this creates a list of ship objects
+ships = []
+for i in ship_names:
+    ship1 = ship(i[1], random.choice(ports))
+    ships.append(ship1)
+
+
 print(f'{len(ports)} ports created')
 print(ports[0].port, ports[0].origin_x, ports[0].origin_y)
+# show the first ship
+print(f'{len(ships)} ships created')
+print(ships[0].ship, ships[0].location, ships[0].port.port)
