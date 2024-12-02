@@ -17,7 +17,7 @@ class ship():
         self.ship = ship
         self.port = port
         self.status = 'Active'
-        self.location = 'At sea'
+        self.location = 'docked'
         self.destination = 'Unknown'
         self.cargo = []
         self.cargo_mass = 0
@@ -65,9 +65,31 @@ for i in ship_names:
     ship1 = ship(i[1], random.choice(ports))
     ships.append(ship1)
 
+# randomly assign ships to random ports:
+for i in ships:
+    i.port.ships.append(i)
 
-print(f'{len(ports)} ports created')
-print(ports[0].port, ports[0].origin_x, ports[0].origin_y)
-# show the first ship
-print(f'{len(ships)} ships created')
-print(ships[0].ship, ships[0].location, ships[0].port.port)
+
+
+# show a dashboard of data: 
+print(f'There are {len(ports)} ports')
+print(f'There are {len(ships)} ships in the fleet')
+print("="*50)
+# List of ships are in each port:
+
+for i in ports:
+    if len(i.ships) > 0 and len(i.ships) < 2:
+        print(f'{i.port} has {len(i.ships)} ship')
+    elif len(i.ships) > 1:
+        print(f'{i.port} has {len(i.ships)} ships')
+    else:
+        pass
+
+
+
+
+# port information
+# print(ports[0].port, ports[0].origin_x, ports[0].origin_y)
+
+# # show the first ship
+# print(ships[0].ship, ships[0].location, ships[0].port.port)
