@@ -13,8 +13,8 @@ bot_patterns = [
     r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?ChatGPT-User',    # ChatGPT-User (OpenAI)
     r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SiteAuditBot',    # SiteAuditBot (Semrush)
     r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Barkrowler',      # barkrowler 
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?MJ12bot'          # MJ12bot
-
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?MJ12bot',          # MJ12bot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?AhrefsBot'        # AhrefsBot 
 ]
 
 log_patterns = [re.compile(pattern, re.IGNORECASE) for pattern in bot_patterns]
