@@ -3,15 +3,20 @@ import re
 import subprocess
 import argparse
 
-# Define regex to match log entries with specified bots
+# Define regex patterns to match log entries for the bots
 bot_patterns = [
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SemrushBot',          # SemrushBot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SBIntuitionsBot',     # SBIntuitionsBot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Applebot',            # Applebot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?PetalBot',            # PetalBot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Barkrowler',          # barkrowler 
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?MJ12bot'              # MJ12bot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SemrushBot',     # SemrushBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SBIntuitionsBot', # SBIntuitionsBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Applebot',        # Applebot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?PetalBot',        # PetalBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?bingbot',         # Bingbot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?ChatGPT-User',    # ChatGPT-User (OpenAI)
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SiteAuditBot',    # SiteAuditBot (Semrush)
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Barkrowler',      # barkrowler 
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?MJ12bot'          # MJ12bot
+
 ]
+
 log_patterns = [re.compile(pattern, re.IGNORECASE) for pattern in bot_patterns]
 
 # Store unique IPs to avoid duplicate blocking
