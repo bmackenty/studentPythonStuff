@@ -5,10 +5,12 @@ import argparse
 
 # Define regex to match log entries with specified bots
 bot_patterns = [
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SemrushBot',     # SemrushBot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SBIntuitionsBot', # SBIntuitionsBot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Applebot',        # Applebot
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?PetalBot'         # PetalBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SemrushBot',          # SemrushBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?SBIntuitionsBot',     # SBIntuitionsBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Applebot',            # Applebot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?PetalBot',            # PetalBot
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Barkrowler',          # barkrowler 
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?MJ12bot'              # MJ12bot
 ]
 log_patterns = [re.compile(pattern, re.IGNORECASE) for pattern in bot_patterns]
 
