@@ -15,7 +15,11 @@ bot_patterns = [
     r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?Barkrowler',      # barkrowler 
     r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?MJ12bot',         # MJ12bot
     r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?AhrefsBot',       # AhrefsBot 
-    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?ClaudeBot'        # ClaudeBot 
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?ClaudeBot',        # ClaudeBot 
+    r'(\d+\.\d+\.\d+\.\d+) .*?"GET .*?" .*?"Mozilla.*?DotBot'           # opensiteexplorer
+
+
+DotBot
 ]
 
 log_patterns = [re.compile(pattern, re.IGNORECASE) for pattern in bot_patterns]
