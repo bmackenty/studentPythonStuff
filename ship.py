@@ -36,10 +36,20 @@ class Component:
         self.name = name
 
     def kind(self):
+        # self.__class__ means "what class is this object an instance of?"
+        # Example: if self is an Engine, then self.__class__ is Engine
+        #
+        # __name__ gives us the *name* of that class as a string.
+        # Example: Engine.__name__ is the string "Engine"
+        #
+        # So this line will return the class name of the current object.
         return self.__class__.__name__
 
     def summary(self):
+        # Here we call kind() to print the class name (like "Engine" or "Weapon"),
+        # followed by the component's name (like "Ion-90 Engine").
         return f"{self.kind()}: {self.name}"
+
 
 
 
@@ -50,10 +60,23 @@ class Component:
 
 class Engine(Component):
     def __init__(self, name, thrust):
-        # Call the constructor of the parent class (Component) to set self.name
+        # super() means "go up to the parent class"
+        # In this case, Engine's parent class is Component.
+        #
+        # Component has its own __init__ method:
+        #     def __init__(self, name):
+        #         self.name = name
+        #
+        # By calling super().__init__(name),
+        # we are *reusing* that code so we don’t have to write "self.name = name" again here.
+        #
+        # Without this call, the Engine object would not have self.name set up!
         super().__init__(name)
-        # Add a new attribute specific to Engine
+
+        # Now we add the Engine-specific attribute.
+        # This is unique to Engine, so it is written here instead of in Component.
         self.thrust = thrust  # measured in kilonewtons (kN)
+
 
     # Override the summary() method so that Engines display their thrust
     def summary(self):
