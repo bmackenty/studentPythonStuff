@@ -1,5 +1,6 @@
+program_running = True
 
-while True:
+while program_running == True:
     print("1. this is for choice 1")
     print("2. this is for choice 2")
     print("3. this is for choice 3")
